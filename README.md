@@ -46,5 +46,5 @@ apply_code_plot.plot_in_band_spectra(file_name, Sky_temp, number_of_channels_per
 ```
 
 ## Credits
-The algorithm are described in the paper (reference to the paper). If someone uses the code, kindly refer to the paper (reference to the paper).
+The algorithm are described in the paper Sharan et al. 2024 (submitted to ApJ). #If someone uses the code, kindly refer to the paper Sharan et al. 2024 (submitted to ApJ).
 
