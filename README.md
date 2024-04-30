@@ -1,5 +1,5 @@
 # MSP in-band-spectra
-It calculates the in-band spectra (flux density in chunks of full wideband telescope frequencies, where the user can decide on the width of the frequency chunk in terms of the number of channels) on uGMRT data and fits the optimal number of broken power law components using AICc model selection criteria.
+It calculates the in-band spectra (flux density estimated for a chunks of frequency over the wide observing band, where the user can decide on the width of the frequency chunk in terms of the number of channels) on uGMRT data and fits the optimal number of broken power law components using AICc model selection criteria.
 
 ## Installation
 
