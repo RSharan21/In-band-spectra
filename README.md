@@ -11,6 +11,9 @@ import apply_code_plot
 
 apply_code_plot.plot_in_band_spectra(file_name, Sky_temp, number_of_channels_per_chunk, sigma, thres, observing_beam, Primary_component, Show_plots, allow_fit, save_plot, number_of_antennas, receive_output)
 ```
+
+Following are the brief description of the arguments used in the above code:
+
 ```file_name``` : input : str, is the name of the pfd/ar folded data cube.
 
 ```Sky_temp``` : input : float, is the sky temperature of the sky at the central frequency of the wideband telescope and the RA, DEC of the pulsar.
@@ -35,6 +38,13 @@ apply_code_plot.plot_in_band_spectra(file_name, Sky_temp, number_of_channels_per
 
 ```receive_output```  : input : bool, if user wants to check the additional information.
 
-## Credits
+### Example usage with the sample pfd (attached in the example_data folder)
+```
+import apply_code_plot
 
+apply_code_plot.plot_in_band_spectra(file_name, Sky_temp, number_of_channels_per_chunk, sigma, thres, observing_beam, Primary_component, Show_plots, allow_fit, save_plot, number_of_antennas, receive_output)
+```
+
+## Credits
+The algorithm are described in the paper (reference to the paper). If someone uses the code, kindly refer to the paper (reference to the paper).
 
