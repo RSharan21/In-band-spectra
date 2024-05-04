@@ -41,8 +41,9 @@ Following are the brief description of the arguments used in the above code:
 ### Example usage with the sample pfd (attached in the example_data folder)
 ```
 import apply_code_plot
-
-apply_code_plot.plot_in_band_spectra(file_name, Sky_temp, number_of_channels_per_chunk, sigma, thres, observing_beam, Primary_component, Show_plots, allow_fit, save_plot, number_of_antennas, receive_output)
+cd Example/
+f = 'J1120-3618_pa_500_200_4096_4_1_8_16nov2018.raw_PSR_1120-3618.pfd'
+apply_code_plot.plot_in_band_spectra(f, 23.0, 15, 5, 3, 'PA', True, True, True, False, 24, False)
 ```
 
 ## Credits
