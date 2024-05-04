@@ -42,7 +42,7 @@ Following are the brief description of the arguments used in the above code:
 ```
 import apply_code_plot
 cd Example/
-f = 'J1120-3618_pa_500_200_4096_4_1_8_16nov2018.raw_PSR_1120-3618.pfd'
+f = 'J1120-3618_pa_500_200_4096_4_1_8_16nov2018.pfd'
 apply_code_plot.plot_in_band_spectra(f, 23.0, 15, 5, 3, 'PA', True, True, True, False, 24, False)
 ```
 
