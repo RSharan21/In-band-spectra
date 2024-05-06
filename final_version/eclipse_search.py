@@ -2254,7 +2254,7 @@ np.savetxt('band3.csv', b3_mjd_SNR_flux_error_file , delimiter=',', fmt= '% s')
 
 
 ############################################################################################################
-#######################							Code for sangita
+#######################							
 
 
 b34 = res_list = [y for x in [band3, band4] for y in x]
@@ -2709,7 +2709,7 @@ for G in group_mjd:
 
 
 
-#		Plots for Sangita
+#		Plots
 
 P_b, T_asc = 0.1207729895, 56124.7701121
 
