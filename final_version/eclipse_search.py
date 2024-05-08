@@ -381,53 +381,6 @@ def group(X, th = 1000/86400):
 
 
 
-##############################################################		optimal number of sub-bands
-
-def band_number(Tsky, thr, **file_data):
-	############# This return the subbands needed which yeilds maximum number of sub-bands greater than threshold
-	
-	if len(file_data.keys()) >2:
-		data_, freq_, mjds_ = file_data['DATA'], file_data['FREQ'], file_data['MJD']
-		
-	else:
-		file_ = file_data['FILE']
-		data_, freq_, mjds_= pfd_data(file_)
-		data_ = data_[:,0]
-
-	
-	unflag_freq = np.sum(data_, axis = (0,2)) != 0
-	freq = freq_[unflag_freq]
-	g_by_tsys = sefd(freq, freq.mean(), 1, Tsky)
-	data_unflaged = data_[:,unflag_freq]
-	data_unflaged = data_unflaged/g_by_tsys[np.newaxis, :, np.newaxis]
-
-	snr_arr = []
-	weight_on = []
-	for no in range(data_.shape[1]-1):
-		n_chan = no + 1
-		
-		
-		fchunched_data = np.array([np.mean(data_unflaged[:,i : i + n_chan], axis = 1) for i in np.arange(0,data_unflaged.shape[1], n_chan) ]).transpose(1,0,2)
-		profile_freq = fchunched_data.mean(0)
-
-		mask = []
-		for i in range(0,data_unflaged.shape[1], n_chan):
-			mask.append(data_unflaged[:,i : i + n_chan].sum((0,1))/(data_unflaged[:,i : i + n_chan].std((0,1)) * np.sqrt(data_unflaged.shape[0]*data_unflaged[:,i : i + n_chan].shape[1]) ) > thr)
-		on_weight_arr = np.array(mask)
-		
-		unflagged_flux_freq = np.array([ (profile_freq[i] - profile_freq[i, ~on_weight_arr[i]].mean() ).sum()   for i in range(profile_freq.shape[0]) ])
-		unflagged_rms_freq = np.array([ profile_freq[i, ~on_weight_arr[i]].std() for i in range(profile_freq.shape[0]) ])
-		snr = unflagged_flux_freq/(unflagged_rms_freq * np.sqrt( on_weight_arr.sum(1) ) )
-		snr_arr.append(np.nan_to_num(snr, nan=0, neginf=0, posinf=0))
-		weight_on.append(on_weight_arr)
-	return snr_arr, weight_on
-
-SNR_arr, W = band_number(26, 3, DATA=data, FREQ=F, MJD=mjd)
-
-for ind, val  in enumerate(SNR_arr):
-	snr_val = np.nan_to_num(val, nan=0, neginf=0, posinf=0) >5
-	print(ind + 1, snr_val.sum(), len(val), W[ind].shape)
-
 
 #####################################################################################################################
 
