@@ -2,10 +2,10 @@
 It calculates the in-band spectra (flux density estimated for chunks of frequency over the wide observing band, where the user can decide on the width of the frequency chunk in terms of the number of channels) on uGMRT data and fits the optimal number of broken power law components using AICc model selection criteria.
 
 ## Installation
-The `requirement.txt` file has the necessary dependencies. You can install these via:
+The `requirements.txt` file has the necessary dependencies. You can install these via:
 
 ```
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 Apart from these, the only other dependency is `PSRCHIVE` (more specifically, its Python bindings), which can be installed via `conda`:
 
