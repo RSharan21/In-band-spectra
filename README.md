@@ -60,4 +60,4 @@ apply_code_plot.plot_in_band_spectra(f, 23.0, 15, 5, 3, 'PA', True, True, True, 
 ```
 
 ## Credits
-The algorithm are described in the paper Sharan et al. 2024 (submitted to ApJ). <!--If someone uses the code, kindly refer to the paper Sharan et al. 2024 (submitted to ApJ).-->
+The algorithm are described in the paper Sharan et al. 2024. If someone uses the code, kindly refer to the paper Sharan et al. 2024 ([submitted to ApJ](https://iopscience.iop.org/article/10.3847/1538-4357/ad55c8)).
